@@ -32,7 +32,7 @@ NoteMate is a web application designed for users to post, edit, delete, like, an
 
    DB_URI=your-mongodb-uri
 
-   SESSION_SECRET=your-secret-key
+   jwtSecret=your-secret-key
 
    npm start
 
