@@ -13,10 +13,10 @@ NoteMate is a web application designed for users to post, edit, delete, like, an
 
 ## Tech Stack
 
-- **Frontend**: EJS, Tailwind CSS (for styling)
+- **Frontend**: EJS, Tailwind CSS 
 - **Backend**: Node.js, Express
 - **Database**: MongoDB, Mongoose
-- **Authentication**: Bcrypt for password hashing
+- **Authentication**: JWT, bcrypt
 - **Version Control**: Git, GitHub
 
 ## Installation
