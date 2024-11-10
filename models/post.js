@@ -1,21 +1,11 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const postSchema = mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
-    },
-    date: {
-        type: Date,
-        default: Date.now,
-    },
+const postSchema = new mongoose.Schema({
     content: String,
-    likes: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "user",
-        },
-    ],
+    date: { type: Date, default: Date.now },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
+    likes: { type: [mongoose.Schema.Types.ObjectId], ref: 'user', default: [] }, // Initialize likes as an empty array
 });
 
-module.exports = mongoose.model("post", postSchema);
+const Post = mongoose.model('post', postSchema);
+module.exports = Post;

@@ -122,6 +122,10 @@ app.get('/profile', isLoggedIn, async (req, res) => {
     let user = await userModel
         .findOne({ email: req.user.email })
         .populate('posts');  // Ensure posts are populated
+
+    // Sort posts by number of likes in descending order
+    user.posts.sort((a, b) => b.likes.length - a.likes.length);
+
     res.render('profile', { user });
 });
 

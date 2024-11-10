@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -19,10 +19,9 @@
 
         <!-- Posts Button -->
         <a href="/posts"
-    class="absolute top-20 right-5 px-4 py-2 rounded-md bg-green-800 hover:bg-gray-700 text-white transition-all duration-300">
-    Posts
-</a>
-
+            class="absolute top-20 right-5 px-4 py-2 rounded-md bg-green-800 hover:bg-gray-700 text-white transition-all duration-300">
+            Posts
+        </a>
 
         <!-- Welcome Message -->
         <h3 class="text-3xl mb-4">Hello <%= user.username %></h3>
@@ -44,7 +43,7 @@
         <div class="mt-20">
             <h3 class="text-3xl mb-3">Your Posts</h3>
             <div class="post-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <% user.posts.reverse().forEach((post) => { %>
+                <% user.posts.forEach((post) => { %>
                     <div class="p-5 border-2 border-zinc-500 rounded-md transform transition-all duration-300 hover:scale-105 hover:shadow-md hover:shadow-zinc-900">
                         <h4 class="text-green-500 mb-2">@<%= user.username %></h4>
                         <p class="tracking-tight break-words">
