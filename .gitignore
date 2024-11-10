@@ -1,0 +1,51 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directory
+jspm_packages/
+
+# Build output
+dist/
+build/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.test
+.env.production
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating system files
+*.swp
+*~
+
+# Coverage directory (for tools like Jest or Mocha)
+coverage/
+
+# Logs and runtime files
+*.log
+pids/
+*.pid
+*.seed
+
+# Optional npm package config
+.npmrc
+
+# SQLite databases
+*.db
+
+# TypeScript definition files
+*.d.ts
