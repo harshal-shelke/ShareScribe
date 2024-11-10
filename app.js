@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require('express')
 const app=express()
 const userModel=require('./models/user')
@@ -11,12 +12,14 @@ app.use(express.urlencoded({ extended:true }))
 app.use(cookieParser())
 app.set('view engine', 'ejs')
 
+const jwtSecret = process.env.JWT_SECRET;
+
 function authenticateUser(req, res, next) {
     const token = req.cookies.token;
     
     if (token) {
         try {
-            const decoded = jwt.verify(token, "harshal");
+            const decoded = jwt.verify(token, jwtSecret);
             req.user = decoded;
         } catch (err) {
             console.error("Invalid token:", err);
@@ -57,7 +60,7 @@ app.post('/register',async (req,res)=>{
             age
         })
 
-        let token=jwt.sign({email:genUser.email, userid:genUser._id},"harshal")
+        let token=jwt.sign({email:genUser.email, userid:genUser._id},jwtSecret)
         res.cookie('token',token).redirect('/')
     })
 })
@@ -73,7 +76,7 @@ app.post('/login',async (req,res)=>{
 
     bcrypt.compare(password,user.password,(err,result)=>{
         if(result){
-            let token=jwt.sign({email:user.email, userid:user._id},"harshal")
+            let token=jwt.sign({email:user.email, userid:user._id},jwtSecret)
             res.cookie('token',token,{ httpOnly: true, secure: false })
             res.status(200).redirect("/posts")
         } 
@@ -175,7 +178,7 @@ function isLoggedIn(req, res, next) {
     }
 
     try {
-        const data = jwt.verify(req.cookies.token, "harshal");
+        const data = jwt.verify(req.cookies.token, jwtSecret)
         req.user = data; // Set user information from JWT to req.user
         next();
     } catch (err) {

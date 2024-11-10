@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
-mongoose.connect("mongodb://localhost:27017/PostProject");
+const dbUri = process.env.DB_URI;
+
+mongoose.connect(dbUri);
 
 const userSchema = mongoose.Schema({
   username: String,
