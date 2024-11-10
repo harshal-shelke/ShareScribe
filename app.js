@@ -65,24 +65,33 @@ app.post('/register',async (req,res)=>{
     })
 })
 
-app.get('/login',(req,res)=>{
-    res.render('login')
-})
+app.get('/login', (req, res) => {
+    // Render the login page without any error initially
+    res.render('login', { error: null });
+});
 
-app.post('/login',async (req,res)=>{
-    let {email,password} = req.body
-    let user=await userModel.findOne({email})
-    if(!user)return res.status(401).send("Invalid credentials")
+app.post('/login', async (req, res) => {
+    let { email, password } = req.body;
+    let user = await userModel.findOne({ email });
 
-    bcrypt.compare(password,user.password,(err,result)=>{
-        if(result){
-            let token=jwt.sign({email:user.email, userid:user._id},jwtSecret)
-            res.cookie('token',token,{ httpOnly: true, secure: false })
-            res.status(200).redirect("/posts")
-        } 
-        else res.redirect('/login')
-    })
-})
+    if (!user) {
+        // If user doesn't exist, pass the error to the login page
+        return res.render('login', { error: "Invalid credentials" });
+    }
+
+    bcrypt.compare(password, user.password, (err, result) => {
+        if (result) {
+            let token = jwt.sign({ email: user.email, userid: user._id }, jwtSecret);
+            res.cookie('token', token, { httpOnly: true, secure: false });
+            res.status(200).redirect("/posts");
+        } else {
+            // If password doesn't match, pass the error to the login page
+            return res.render('login', { error: "Invalid credentials" });
+        }
+    });
+});
+
+
 
 app.get('/logout',(req,res)=>{
     res.cookie('token',"")
