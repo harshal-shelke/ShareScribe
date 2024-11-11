@@ -49,3 +49,6 @@ pids/
 
 # TypeScript definition files
 *.d.ts
+
+# Ignore the images/uploads directory
+public/images/uploads/

@@ -6,28 +6,15 @@ const cookieParser = require('cookie-parser')
 const bcrypt=require('bcrypt')
 const postModel = require('./models/post')
 const jwt=require('jsonwebtoken')
-const crypto = require('crypto')
-const path = require('path')
-const multer = require('multer')
+const upload = require('./config/multer'); 
+const path=require('path')
 
 app.use(express.json())
 app.use(express.urlencoded({ extended:true }))
 app.use(cookieParser())
 app.set('view engine', 'ejs')
+app.use(express.static(path.join(__dirname,"public")))
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/images/uploads')
-    },
-    filename: function (req, file, cb) {
-      crypto.randomBytes(12,(err,bytes) => {
-        const fn=bytes.toString("hex") + path.extname(file.originalname);
-          cb(null, fn)
-      })
-    }
-  })
-  
-  const upload = multer({ storage: storage })
 
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -60,27 +47,80 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/createAccount',(req,res)=>{
-    res.render('index')
+    res.render('index',{ errorMessage: null })
 })
 
-app.post('/register',async (req,res)=>{
-    let {username,name,email,password,age} = req.body
-    let user=await userModel.findOne({email})
-    if(user)return res.status(500).send("user already exists")
-    
-    bcrypt.hash(password,10,async(err,hash)=>{
-        let genUser=await userModel.create({
-            username,
-            name,
-            email,
-            password:hash,
-            age
-        })
 
-        let token=jwt.sign({email:genUser.email, userid:genUser._id},jwtSecret)
-        res.cookie('token',token).redirect('/')
-    })
-})
+// Import the upload configuration that uses Cloudinaryis path based on where you saved the Cloudinary config
+app.post('/register', upload.single('image'), async (req, res) => {
+    try {
+        // Server-side validation for required fields
+        const { username, name, email, password, age } = req.body;
+        const image = req.file;
+
+        let errorMessage = '';
+        
+        if (!username || !name || !email || !password || !age || !image) {
+            errorMessage = 'All fields are required, including the image.';
+            return res.render('index', { errorMessage });
+        }
+
+        if (!/^[\w]+$/.test(username)) {
+            errorMessage = 'Username can only contain letters, numbers, and underscores.';
+            return res.render('index', { errorMessage });
+        }
+
+        // Check if email is valid
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errorMessage = 'Please provide a valid email address.';
+            return res.render('index', { errorMessage });
+        }
+
+        // Check if age is a valid number
+        if (isNaN(age) || age <= 0) {
+            errorMessage = 'Please provide a valid age.';
+            return res.render('index', { errorMessage });
+        }
+
+        // Check if user already exists in the database
+        const userExists = await userModel.findOne({ email });
+        if (userExists) {
+            errorMessage = 'User already exists with this email address.';
+            return res.render('index', { errorMessage });
+        }
+
+        // Hash the password before saving
+        bcrypt.hash(password, 10, async (err, hash) => {
+            if (err) {
+                errorMessage = 'Error hashing password.';
+                return res.render('index', { errorMessage });
+            }
+
+            // Save user to the database
+            const profilePic = `/images/uploads/${image.filename}`;
+            const newUser = new userModel({
+                username,
+                name,
+                email,
+                password: hash,
+                age,
+                profilePic
+            });
+
+            await newUser.save();
+
+            // Create JWT token
+            const token = jwt.sign({ email: newUser.email, userId: newUser._id }, jwtSecret);
+            res.cookie('token', token).redirect('/');
+        });
+    } catch (error) {
+        console.error(error);
+        return res.render('index', { errorMessage: 'Error registering user, please try again later.' });
+    }
+});
+
+
 
 app.get('/login', (req, res) => {
     // Render the login page without any error initially
@@ -227,21 +267,22 @@ app.get('/userPosts',isLoggedIn,async(req, res) =>{
 })
 
 
-
-app.get('/test',(req, res) =>{
-    res.render('test')
+app.get('/profileUpload',(req,res)=>{
+    res.render('profileUpload')
 })
 
-app.post('/upload',upload.single("image"),(req, res) =>{
-    console.log(req.file);
+app.post('/upload',isLoggedIn,upload.single("image"),async(req,res)=>{
+    let user=await userModel.findOne({email:req.user.email})
+    user.profilePic=`/images/uploads/${req.file.filename}`
+    await user.save()
+    res.redirect('/profile')
 })
 
 
 
 
-const port=5000;
+const port =5000;  // Default to 5000 if PORT is not set
 
-
-app.listen(port,()=>{
-    console.log(`Server is running on port ${port}`)
-})
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
