@@ -112,7 +112,7 @@ app.post('/login', async (req, res) => {
 
 app.get('/logout',(req,res)=>{
     res.cookie('token',"")
-    res.redirect('/login')
+    res.redirect('/posts')
 })
 
 app.get('/posts', async (req, res) => {
@@ -175,7 +175,7 @@ app.get('/edit/:id', isLoggedIn, async (req, res) => {
 
 app.get('/delete/:id', async (req, res) => {
     let post=await postModel.findOneAndDelete({_id:req.params.id})
-    res.redirect('/profile')
+    res.redirect('/userPosts')
 })
 
 
@@ -197,7 +197,7 @@ app.post('/post', isLoggedIn, async (req, res) => {
     user.posts.push(post._id);
     await user.save();
 
-    res.redirect('/profile');
+    res.redirect('/userPosts');
 });
 
 
@@ -216,6 +216,18 @@ function isLoggedIn(req, res, next) {
     }
 }
 
+app.get('/userPosts',isLoggedIn,async(req, res) =>{
+    let user = await userModel
+        .findOne({ email: req.user.email })
+        .populate('posts');  // Ensure posts are populated
+
+    // Sort posts by number of likes in descending order
+    user.posts.sort((a, b) => b.likes.length - a.likes.length);
+    res.render('userPosts',{user})
+})
+
+
+
 app.get('/test',(req, res) =>{
     res.render('test')
 })
@@ -223,6 +235,8 @@ app.get('/test',(req, res) =>{
 app.post('/upload',upload.single("image"),(req, res) =>{
     console.log(req.file);
 })
+
+
 
 
 const port=5000;
