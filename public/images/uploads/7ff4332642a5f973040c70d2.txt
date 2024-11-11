@@ -1,0 +1,135 @@
+introduce yourself
+
+--> hello sir good morning i am harshal shelke currently pursuing my bachleros at aissm coe pune. prior to this i have completed diploma in cs from kk. im skilled in java javacript react node express in db be it mysql or mongodb.i am also well versed in working wiht linux env.I have experience working with various development tools like version control github and containeraztion tool docker.i have developed projects using all these tech. I hold relevant certifications including AWS cloud practitioner.apart from this I am keen to learn new advancements and solve complex problems.
+thats all about me
+
+
+Here’s an updated version of your introduction with your internships included:
+
+"Good morning, sir. I am Harshal Shelke, currently pursuing my Bachelor's in Computer Science at AISSMS COE Pune. Prior to this, I completed my Diploma in CS from KKW. I am skilled in Java, JavaScript, React, Node, Express, and database management with MySQL and MongoDB. I am also well-versed in working with Linux environments and have experience using development tools like GitHub for version control and Docker for containerization. I have developed several projects using these technologies, and I hold relevant certifications, including AWS Cloud Practitioner. Additionally, I have completed two internships: one at Sumago InfoTech Pvt. Ltd., where I worked on web development using technologies like HTML, CSS, Bootstrap, React, and MySQL; and another at Anaccord Web World Pvt. Ltd., focusing on responsive web development and SQL-based database management. Apart from this, I am keen to learn new advancements and solve complex problems. That’s a brief about me."
+
+
+about projects
+
+1)PathWays
+--->"I’ve worked on several projects that have helped me develop a strong foundation in full-stack development and allowed me to contribute meaningful solutions. One of my major projects, PathMyWay, was a hackathon initiative where my team and I aimed to create a platform connecting prospective university students with mentors who could guide them through application processes, financial aid, and scholarship opportunities. This platform also includes a deadline calendar and a resume helper, which provides real-time suggestions to improve resume content. We were thrilled to place 5th in the hackathon, which really reinforced our confidence in the idea. I was responsible for both frontend and backend tasks, utilizing the MERN stack to manage complex data flow and UI interactivity.
+
+2)chatWave 
+--->ChatWave, a global chat application. This app connects random users across the world, leveraging Socket.IO and WebSockets for low-latency, real-time messaging. I built this using the MERN stack and containerized it with Docker to enhance scalability. The technical challenge of establishing real-time connections and ensuring reliability helped me deepen my understanding of WebSocket technology and Docker deployment.
+
+3)Spotify clone using ReactJS and the Spotify API
+--->This application enables users to log in with their Spotify account, view and interact with playlists, and control song playback. I built a responsive UI using Styled Components, implemented secure user authentication, and managed seamless song transitions with dynamic updates. This project gave me practical experience in third-party API integration and handling asynchronous data flows, both of which are essential for creating user-centric, real-time applications."
+
+4)AZ News
+--->a React-based news application designed for an enriched news-browsing experience. By leveraging NewsAPI, it provides access to news across various categories, including technology, health, and more. The UI is built with Bootstrap for a clean, responsive look, and I implemented infinite scrolling to ensure users have uninterrupted access to content. Additionally, a loading spinner enhances user experience during data retrieval. This project honed my skills in API handling, data rendering efficiency, and creating a responsive, intuitive UI."
+
+
+
+what was your role in project
+--->**"In each project, I took on a mix of both frontend and backend responsibilities. For example, in my PathMyWay project, I focused heavily on the backend architecture, working with Node.js and Express to set up a robust API that could handle user data, scholarships, and a resume helper tool. I also collaborated closely on the frontend, where I used React to create a user-friendly interface, particularly for the filtering and deadline calendar features. Additionally, I coordinated with team members to ensure data consistency and led efforts to deploy the app on a cloud server.
+
+In my ChatWave project, I took on a full-stack role where I was responsible for setting up WebSocket connections with Socket.IO for real-time messaging, managing Docker for containerization, and working on both backend API development and frontend UI.
+
+In projects like my Spotify Clone, I focused more on the frontend experience, managing user authentication through the Spotify API and developing interactive playlist and song control components using ReactJS. Lastly, in AZ News, I handled the data-fetching logic and ensured responsive design with Bootstrap. Across these projects, I’ve been deeply involved in both the planning and execution phases, making sure each feature aligns well with user needs and project goals."**
+
+project independant answer
+--->**"In my projects, I typically take on a full-stack development role, contributing to both frontend and backend tasks. I’m responsible for designing and implementing core features, managing the flow of data, and ensuring a seamless user experience. On the backend, I often handle API development and database management, optimizing queries and structuring data for efficiency. For the frontend, I focus on creating responsive and intuitive interfaces, using tools like React to ensure a smooth and engaging user experience.
+
+I also work on deployment and containerization, often using Docker to create scalable, isolated environments that make deployment and testing more efficient. In addition, I play an active role in coordinating with team members, making sure our code is well-documented and maintainable, and that we’re aligned with project goals and deadlines. My role typically involves troubleshooting and optimizing, which helps me ensure that our final product is both functional and user-friendly."**
+
+
+what challenges do u face in project
+project independatnt-->**"In projects, one of the main challenges I encounter is managing complex dependencies, especially when integrating multiple technologies or third-party APIs. For example, ensuring seamless data flow between frontend and backend can be tricky, particularly in real-time applications. Handling asynchronous data fetching and maintaining responsiveness while avoiding performance issues often requires careful debugging and optimization.
+
+Another challenge is containerizing projects with Docker, particularly in managing dependencies and network configurations between containers. This sometimes involves trial and error to get everything running smoothly, especially when working with databases like MongoDB.
+
+On the collaboration side, aligning with team members on project goals, code standards, and timelines can be challenging. I address this by staying proactive in communication, regularly updating the team on progress, and ensuring we’re all aligned through documentation and version control practices.
+
+Finally, prioritizing user experience while managing technical constraints, like limited API rate limits or latency, can be demanding. I often need to balance feature development with optimization to create an efficient and user-friendly product."**
+
+project dependant-->**"In my PathMyWay project, one of the biggest challenges was managing the complex data flow, especially with the resume helper and scholarship filtering features. Ensuring that data remained consistent and responsive required careful API design and state management in React. Additionally, handling and displaying large sets of filtered data without slowing down the application was tricky, so I focused on optimizing queries and implementing efficient state management.
+
+For ChatWave, establishing real-time communication with Socket.IO presented its own challenges. Ensuring low-latency connections was critical, especially when scaling to support more users. I also had to address deployment issues with Docker, particularly in configuring the network so that the frontend and backend could interact seamlessly in containerized environments.
+
+In the Spotify Clone, a main challenge was integrating the Spotify API and handling authentication securely. I needed to ensure smooth, error-free user authentication and manage rate limits effectively to avoid interruptions in service. Debugging these API integrations required deep testing and careful handling of asynchronous calls.
+
+With AZ News, the challenge was managing infinite scrolling and ensuring that data loaded efficiently without causing performance issues. Handling API rate limits and setting up a smooth loading experience with a spinner was key. I also had to ensure that the UI remained responsive and clean, which was sometimes challenging with large amounts of dynamically loaded content."**
+
+
+certifications
+-->**"I’ve completed several certifications that have strengthened my foundational and specialized knowledge. For instance, the AWS Cloud Practitioner certification has given me a solid grounding in cloud infrastructure and AWS services, which I apply when working on scalable and efficient applications. My certification in Google Cloud Fundamentals: Core Infrastructure has expanded my understanding of cloud architecture and management, particularly in multi-cloud environments.
+
+To deepen my technical skills, I completed a certification in Data Structures and Algorithms with Java, which has enhanced my problem-solving capabilities and prepared me to handle complex coding challenges effectively. Additionally, I earned the CNSS Certified Network Security Specialist credential, which introduced me to key cybersecurity principles, allowing me to build secure applications with a strong focus on data protection and network safety.
+
+These certifications, along with my practical project experience, have collectively improved my technical skills and equipped me with best practices for developing and deploying secure, high-performance applications."**
+
+
+how do u distribute the tasks among team mates to complete the project on time
+--->"To distribute tasks effectively, I begin by understanding the strengths and expertise of each team member. I then break down the project into clear, achievable tasks and assign them based on individual skills. I ensure that each team member is clear on their responsibilities and timelines. Throughout the process, I encourage regular communication to address any challenges or roadblocks. This collaborative approach helps maintain focus and ensures the project progresses on time."
+
+what is ur fav subject and lease fav subject and how do u overcome with it
+-->"My favorite subject is Data Structures and Algorithms (DSA) because I enjoy problem-solving and optimizing solutions. It helps me think logically and structure my approach to coding efficiently. My least favorite subject was initially Operating Systems (OS), as it involves a lot of theory and complex concepts like memory management. To overcome this, I broke down the topics into smaller, manageable parts and practiced real-world examples to connect theory with application. This made the concepts more relatable and easier to understand."
+
+
+short term and long term goal
+--->>In the short term, my goal is to enhance my technical skills, particularly in cloud technologies and DevOps, and gain hands-on experience to apply what I’ve learned. In the long term, I aim to transition into a leadership role where I can contribute to the strategic direction of projects, mentor junior team members, and work on cutting-edge technologies to drive innovation."
+
+
+what u know about accenture
+--->"Accenture is a global leader in consulting, technology, and operations services, helping businesses transform with innovative solutions. They have a strong focus on digital transformation, sustainability, and diversity. Known for their commitment to continuous learning,Accenture has a strong presence in many industries, including healthcare, financial services, and telecommunications. Accenture provides opportunities for professional growth, which aligns with my career aspirations."
+
+why accenture
+--->"I’m drawn to Accenture because of its reputation as a leader in technology and innovation. The opportunity to work on cutting-edge projects across various industries, particularly in areas like cloud computing, AI, and digital transformation, excites me. I believe that Accenture’s focus on leveraging advanced technologies to solve complex  challenges aligns perfectly with my career aspirations. Additionally, the company’s strong emphasis on continuous learning and professional development makes it an ideal environment for me to grow, expand my technical skills, and contribute to impactful solutions."
+
+if another company is offering 6LPA and accenture is offering 5LPA which one will u choose and why
+--->>"While salary is an important factor, my decision would be based on the overall opportunities for growth, learning, and career development. Accenture’s reputation for providing cutting-edge technology projects, a focus on continuous learning, and a strong company culture would be my priority. The chance to work with diverse teams on innovative solutions in areas like sw dev,cloud, and digital transformation aligns more closely with my long-term career goals. I believe the experience and skills I would gain at Accenture would have a greater long-term impact on my career trajectory, making it the better choice for me."
+
+Are you comfortable for night shifts
+--->"I understand that night shifts may sometimes be required, and I’m willing to work them if necessary. However, I would prefer to focus on regular day shifts, as I believe I can be more productive and maintain a better work-life balance during those hours. if the need arises and i will always prioritize project deadlines and team collaboration."
+
+What things you learned from your project
+--->>"From my projects, I learned how to manage end-to-end development processes, from designing and coding to deploying and maintaining applications. I gained hands-on experience with technologies like the MERN stack, Docker, and API integrations, improving my problem-solving and technical skills. Additionally, I learned the importance of collaboration, time management, and maintaining code quality in a team environment.
+
+Lastly, do you have any questions
+1) Could you tell me more about the team structure and the types of projects I would be working on in this role?
+2)"Can you tell me about the onboarding process and the resources available to new employees?"
+
+old resume and new resume question
+--->>>"I apologize for the confusion, but the resume you have is an older version that I mistakenly uploaded while regirtation. I have since updated it to include additional projects like PathMyWay and ChatWave. I’d be happy to discuss those projects with you now if you’d like."
+
+
+for internships
+--->"I’d like to mention that I have completed two internships. The first was with Sumago InfoTech Pvt. Ltd., where I gained practical experience in developing dynamic web applications using technologies like HTML, CSS, Bootstrap, React, and MySQL. I also worked on project documentation, including gathering requirements and creating user guides. My second internship was at Anaccord Web World Pvt. Ltd., where I focused on developing and maintaining responsive web applications, improving performance with dynamic content, and using SQL for database management."
+
+if team member is not supportive and doing what was told then ??
+--->>In such a situation, I would first try to understand if there are any underlying issues or challenges they might be facing. Communication is key, so I would approach them respectfully to discuss the matter and offer my assistance if needed. If the situation doesn’t improve, I would escalate it to the team leader or project manager to find a resolution, ensuring that the team can stay on track and meet project goals.
+
+project details
+	project title
+	project tech
+	why created and what solve
+
+1. Project Title: PathMyWay
+
+Project Tech: MERN Stack (MongoDB, Express, React, Node.js)
+Why Created: This project was created to assist prospective students from diverse backgrounds in navigating the application process and securing financial aid.
+What It Solves: It connects students with mentors from the same university, offers updated scholarships based on student demographics, and provides a resume helper to improve application quality, helping students make informed decisions and meet deadlines efficiently.
+2. Project Title: ChatWave
+
+Project Tech: MERN Stack, Docker, Socket.io
+Why Created: This project was developed as a chat application that connects random users globally, providing a platform for spontaneous conversations.
+What It Solves: It uses WebSockets for low-latency communication and ensures that users can connect in real time, even if they are waiting for others to join the chat, enhancing the user experience.
+3. Project Title: Spotify Clone
+
+Project Tech: ReactJS, Styled Components, Spotify API
+Why Created: This project was built to replicate the core functionality of Spotify, offering users a familiar interface to interact with music playlists.
+What It Solves: It allows users to log in using their Spotify account, view their playlists, play music, and control playback, all while providing a seamless and dynamic experience through ReactJS and the Spotify API.
+4. Project Title: AZ News
+
+Project Tech: ReactJS, Bootstrap, NewsAPI
+Why Created: This project was created to provide users with an easy and accessible way to stay informed by displaying news articles across various categories.
+What It Solves: It fetches news from a wide range of sources, offering a responsive design with infinite scrolling for better content discovery, ensuring users always have access to the latest news in technology, health, and more.
+	
+	
+team conflict
+--->>"If faced with a team conflict, my first approach would be to listen to all parties involved to understand their concerns and perspectives.I would encourage team members to express themselves respectfully and calmly. I would then focus on identifying the root cause of the conflict, which is often due to miscommunication or differing expectations. Once the issue is clear, I would work with the team to find a mutually beneficial solution, ensuring everyone’s concerns are addressed. If needed, I would escalate the matter to a manager or team leader for further mediation. Ultimately, the confilict will get resolve and team will get back to work
