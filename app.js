@@ -111,7 +111,7 @@ app.post('/register', upload.single('image'), async (req, res) => {
             await newUser.save();
 
             // Create JWT token
-            const token = jwt.sign({ email: newUser.email, userId: newUser._id }, jwtSecret);
+            const token = jwt.sign({ email: newUser.email, userid: newUser._id }, jwtSecret);
             res.cookie('token', token).redirect('/');
         });
     } catch (error) {
