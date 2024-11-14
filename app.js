@@ -65,7 +65,10 @@ app.post('/register', upload.single('image'), async (req, res) => {
             return res.render('index', { errorMessage });
         }
 
-        if (!/^[\w]+$/.test(username)) {
+        // Replace spaces in the username with underscores
+        const formattedUsername = username.replace(/\s+/g, '_');
+
+        if (!/^[\w]+$/.test(formattedUsername)) {
             errorMessage = 'Username can only contain letters, numbers, and underscores.';
             return res.render('index', { errorMessage });
         }
@@ -100,7 +103,7 @@ app.post('/register', upload.single('image'), async (req, res) => {
             // Save user to the database
             const profilePic = `/images/uploads/${image.filename}`;
             const newUser = new userModel({
-                username,
+                username: formattedUsername, // Use the formatted username
                 name,
                 email,
                 password: hash,
@@ -119,6 +122,7 @@ app.post('/register', upload.single('image'), async (req, res) => {
         return res.render('index', { errorMessage: 'Error registering user, please try again later.' });
     }
 });
+
 
 
 

@@ -1,6 +1,11 @@
 # Node.js dependencies
 node_modules/
 
+Dockerfile
+.dockerignore
+docker-compose.yaml
+
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
