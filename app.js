@@ -285,7 +285,7 @@ app.post('/upload',isLoggedIn,upload.single("image"),async(req,res)=>{
 
 
 
-const port =5000;  // Default to 5000 if PORT is not set
+const port =process.env.PORT || 5000;  // Default to 5000 if PORT is not set
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
