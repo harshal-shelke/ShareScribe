@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 const bcrypt=require('bcrypt')
 const postModel = require('./models/post')
 const jwt=require('jsonwebtoken')
-const upload = require('./config/multer'); 
+const upload = require('./config/cloudinaryConfig'); 
 const path=require('path')
 
 app.use(express.json())
@@ -56,7 +56,8 @@ app.post('/register', upload.single('image'), async (req, res) => {
     try {
         // Server-side validation for required fields
         const { username, name, email, password, age } = req.body;
-        const image = req.file;
+        const image = req.file.path;
+        // console.log(image);
 
         let errorMessage = '';
         
@@ -101,7 +102,7 @@ app.post('/register', upload.single('image'), async (req, res) => {
             }
 
             // Save user to the database
-            const profilePic = `/images/uploads/${image.filename}`;
+            const profilePic =image;
             const newUser = new userModel({
                 username: formattedUsername, // Use the formatted username
                 name,
@@ -277,9 +278,11 @@ app.get('/profileUpload',(req,res)=>{
 
 app.post('/upload',isLoggedIn,upload.single("image"),async(req,res)=>{
     let user=await userModel.findOne({email:req.user.email})
-    user.profilePic=`/images/uploads/${req.file.filename}`
+    
+    user.profilePic=req.file.path
     await user.save()
     res.redirect('/profile')
+
 })
 
 
